@@ -1,0 +1,101 @@
+import easygui
+
+# this checks for your name and age
+easygui.msgbox ("Hi! Welcome to the quiz!")
+name_1 = easygui.enterbox ("What is your name?")
+print("Welcome to the quiz once again," + name_1)
+age = easygui.integerbox ("Hi " + (name_1) + ". How old are you?")
+
+# this is to keep the track of your score
+score = 0
+question = ("question_1", "question_2", "question_3", "question_4", "question_5", "question_6", "question_7", "question_8")
+
+
+# this checks the person is the right age to do the quiz
+while age < 15 and age > 18:
+    
+    easygui.msgbox("too young")
+if age > 18:
+    easygui.msgbox("too old")
+    
+else:
+    
+    easygui.msgbox("Welcome to the quiz! There are 8 questions for this quiz")
+
+# this is the quiz's questions
+quiz_questions = ["Which of these words means “under” in te reo?",
+                  "What is an English word for “pukapuka”?",
+                  "Which te reo word could mean either “clock” or “orange” in English?",
+                  "Which of the following means “island” in te reo?",
+                  "Sometimes used to describe items such as “whare”, what does the word “nui” mean?",
+                  "Which of these terms in te reo means “Excellent”?",
+                  "Where is Te Wairere?",
+                  "Where would you commonly find a ‘manu’?"]
+
+# this is the quiz's answers
+quiz_answers = ["raro", "book", "karaka", "moutere", "big", "rawe", "Cromwell", "sky"]
+
+# this is the quiz's choices
+quiz_choices = [["runga", "raro", "roto", "waho"], ["book", "table", "clock", "wall"], ["kikorangi", "karaka", "pango", "whero"],
+               ["rohe", "whenua", "moutere", "iwi"], ["long", "wide", "small", "big"], ["kaha", "manaaki", "rawe", "pai"],
+               ["Alexandra", "Clyde", "Bannockburn", "Cromwell"], ["sky", "Play School", "swimming pool", "classroom"]]
+
+question_1 = easygui.choicebox(quiz_questions[0], choices = quiz_choices[0])
+
+# this checks if you've got the question right or wrong and keeps the track of your score
+if question_1 == quiz_answers[0]:
+    score += 1
+    print = easygui.msgbox("Hurray!Your score is now: " + str(score))
+else:
+    print = easygui.msgbox("Oops, you're wrong")
+    
+question_2 = easygui.choicebox(quiz_questions[1], choices = quiz_choices[1])
+if question_2 == quiz_answers [1]:
+    score += 1
+    print = easygui.msgbox("Well done! Your score is now: " + str(score))
+    
+else:
+    print = easygui.msgbox("That's incorrect, better luck next time!")
+
+question_3 = easygui.choicebox(quiz_questions[2], choices = quiz_choices[2])
+if question_3 == quiz_answers [2]:
+    score += 1
+    print = easygui.msgbox("Hurray! Going well! Your score is now: " + str(score))
+else:
+    print = easygui.msgbox("That's incorrect, better luck next time!")
+
+question_4 = easygui.choicebox(quiz_questions[3], choices = quiz_choices[3])
+if question_4 == quiz_answers [3]:
+    score += 1
+    print = easygui.msgbox("Well done! Keep it up! Your score is now:" + str(score))
+else:
+    print = easygui.msgbox("That's incorrect, better luck next time!")
+    
+question_5 = easygui.choicebox(quiz_questions[4], choices = quiz_choices[4])
+if question_5 == quiz_answers [4]:
+    score += 1
+    print = easygui.msgbox("Well done! Your score is now:" + str(score))
+else:
+    print = easygui.msgbox("That's incorrect, better luck next time!")
+
+question_6 = easygui.choicebox(quiz_questions[5], choices = quiz_choices[5])
+if question_6 == quiz_answers [5]:
+    score += 1
+    print = easygui.msgbox("Hurray! Your score is now:" + str(score))
+else:
+    print = easygui.msgbox("That's incorrect, better luck next time!")
+
+question_7 = easygui.choicebox(quiz_questions[6], choices = quiz_choices[6])
+if question_7 == quiz_answers [6]:
+    score += 1
+    print = easygui.msgbox("Hurray! Your score is now:" + str(score))
+else:
+    print = easygui.msgbox("That's incorrect, better luck next time!")
+
+question_8 = easygui.choicebox(quiz_questions[7], choices = quiz_choices[7])
+if question_8 == quiz_answers [7]:
+    score += 1
+    print = easygui.msgbox("Congratulations! You have finished the quiz! Your final score is:" + str(score))
+else:
+    print = easygui.msgbox("That's incorrect, You've reached the end")
+
